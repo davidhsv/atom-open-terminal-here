@@ -17,7 +17,7 @@ module.exports =
     isDarwin = document.body.classList.contains("platform-darwin")
     isWin32 = document.body.classList.contains("platform-win32")
 
-    selectedView = atom.workspaceView.find('.tree-view .selected')?.view()
+    selectedView = atom.workspaceView.find('.tree-view .selected').views()?[0][0]
     isDir = selectedView?.hasClass("directory")
     isFile = selectedView?.hasClass("file")
     thepath = selectedView?.getPath()
